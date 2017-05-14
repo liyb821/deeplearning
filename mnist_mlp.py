@@ -14,7 +14,7 @@ h1_units = 300
 h2_units = 200
 keep_prob = tf.placeholder(tf.float32)
 
-# step1: net architecture
+# step1: build net architecture
 x = tf.placeholder(tf.float32, [None, 784])
 y = tf.placeholder(tf.float32, [None, 10])
 w1 = tf.Variable(tf.truncated_normal([784, h1_units], stddev=0.1))
