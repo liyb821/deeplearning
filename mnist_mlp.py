@@ -14,7 +14,7 @@ h1_units = 300
 h2_units = 200
 keep_prob = tf.placeholder(tf.float32)
 
-# step1: build net architecture
+# step1: net architecture
 x = tf.placeholder(tf.float32, [None, 784])
 y = tf.placeholder(tf.float32, [None, 10])
 w1 = tf.Variable(tf.truncated_normal([784, h1_units], stddev=0.1))
@@ -29,7 +29,7 @@ hidden2 = tf.nn.relu(tf.matmul(hidden1_drop, w2) + b2)
 hidden2_drop = tf.nn.dropout(hidden2, keep_prob)
 y_ = tf.nn.softmax(tf.matmul(hidden2_drop, w3) + b3)
 
-# step2: difine the loss and optimizer
+# step2: loss and optimizer
 # loss function
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y*tf.log(tf.clip_by_value(y_,1e-10,1.0)), reduction_indices=[1]))
 all_weights = tf.trainable_variables()
@@ -61,5 +61,4 @@ print sess.run(accuracy, {x:mnist.test.images, y:mnist.test.labels, keep_prob:1.
 
 sess.close()
 
-# done
 
