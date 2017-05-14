@@ -61,4 +61,5 @@ print sess.run(accuracy, {x:mnist.test.images, y:mnist.test.labels, keep_prob:1.
 
 sess.close()
 
+# done
 
