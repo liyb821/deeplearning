@@ -14,3 +14,4 @@ All the code can be run in **tensorflow 1.0**.
 - [ ] seq-to-seq
 - [ ] seq-to-seq-with-attention
 - [ ] RL
+- [ ] dssm
